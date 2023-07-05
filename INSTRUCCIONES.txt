@@ -1,0 +1,25 @@
+1. instalar python en su version 3.11
+
+2. instalar paquetes:
+	2.1. pip install flask
+	2.2. pip install python-dotenv
+	2.3. pip install python-decouple
+	2.4. pip install Flask-Mail
+	2.5. pip install mariadb
+
+3. instalar mariadb 
+	3.1. link = 'https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.0.2&os=windows&cpu=x86_64&pkg=msi&m=insacom'
+
+4. en el archivo .env, ruta '\TuPaseoYa\src'
+	4.1. MAIL_USERNAME = Email que se va usar para enviar los mensajes 
+	4.2. MAIL_PASSWORD = contraseña del email
+	4.3. MYSQL_USER = nombre de usurio de la base de datos 
+	4.4. MYSQL_PWD = contraseña de la base de datos
+
+5. instalar DBeaver para la gention de la base de datos 
+	5.1. link = https://dbeaver.io/download/
+
+6. importar la base de datos que se encuentra en la ruta \TuPaseoYa\src\DataBase en el progrma DBaver
+	6.1. instrucciones de inportacion link = https://www.youtube.com/watch?v=jokDZXRwJ4o
+
+7. Ejecutar el programa

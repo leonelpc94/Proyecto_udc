@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/formulario.css">
+<div class="bloque">
+  <div class="bloque__titulo">
+    <h1 class="bloque__titulo__sub">Eliminar cuanta</h1>
+  </div>
+  <hr>
+  <form action="/e_persona" method="post">
+    <div class="bloque__caja">
+    <input type="password" required name="clave" class="bloque__caja__input" placeholder="Ingrese contraseña">
+  </div>
+    <div class="bloque__caja">
+      <button class="bloque__caja__boton">Enviar</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

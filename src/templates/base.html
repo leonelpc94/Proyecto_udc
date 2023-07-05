@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Paseo Ya</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="icon" href="/static/img/decoracion/isoft - copia.jpeg">
+</head>
+<body>
+    <header class="cabeza">
+        <div class="cabeza__derecha">
+            <form action="/" method="get">
+                <button class="cabeza__derecha__boton"><img src="/static/img/decoracion/isoft.jpeg" width="100px"></button>
+            </form>
+        </div>
+        {% if login == False %}
+        <nav class="cabeza__izquierda">
+            <ul class="cabeza__izquierda__menu">
+                <li>
+                    <img src="/static/img/decoracion/no-user-image.jpg " width="50px" height="50px" class="cabeza__izquierda__menu__img">
+                    <ul class="cabeza__izquierda__vertical">
+                        <li class="cabeza__izquierda__menu__lista">
+                            <form action="/login" method="get" class="cabeza__login__form">
+                                <button class="cabeza__izquierda__vertical__boton">Login</button>
+                            </form>
+                        </li>
+                        <li class="cabeza__izquierda__menu__lista">
+                            <form action="/registroPersona/mail" method="get" class="cabeza__registro">
+                                <button class="cabeza__izquierda__vertical__boton">Registro</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        {% endif %}
+        {% if login %}
+        <nav class="cabeza__izquierda">
+            <ul class="cabeza__izquierda__menu">
+                <li>
+                    <img src="/static/img/perfiles/{{persona['_ID']}}.jpg" width="50px" height="50px" class="cabeza__izquierda__menu__img">
+                    <ul class="cabeza__izquierda__vertical">
+                        <li class="cabeza__izquierda__vertical__nombre">
+                            <div>
+                                <h4>{{persona['_nombre']}}</h4>
+                            </div>
+                        </li>
+                        <li class="cabeza__izquierda__menu__lista">
+                            <form action="/actualizar" method="get">
+                                <button class="cabeza__izquierda__vertical__boton">Actualizar perfil</button>
+                            </form>
+                        </li>
+                        <li class="cabeza__izquierda__menu__lista">
+                            <form action="/fin" method="get">
+                                <button class="cabeza__izquierda__vertical__boton">Cerrar Sesión</button>
+                            </form>
+                        </li>
+                        <hr>
+                       <li class="cabeza__izquierda__menu__lista">
+                            <form action="/formulario" method="get">
+                                <button class="cabeza__izquierda__vertical__boton">Registrar plan</button>
+                            </form>  
+                       </li >
+                        <li class="cabeza__izquierda__menu__lista">
+                            <form action="/lista" method="get">
+                                <button class="cabeza__izquierda__vertical__boton">Mis planes</button>
+                            </form>
+                        </li >
+                        <li class="cabeza__izquierda__menu__lista">
+                            <form action="/favoritos" method="get">
+                                <button class="cabeza__izquierda__vertical__boton">lista de deseados</button>
+                            </form>
+                        </li> 
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        {% endif %}
+    </header>
+    <div class="cuerpo">
+        {% with message = get_flashed_messages() %}
+            {% if message %}
+                <div class="cuerpo__caja">
+                    {% for index in message %}
+                        <p class="cuerpo__caja__mensaje">{{ index }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block cuerpo %}
+        {% endblock %} 
+    </div>
+    <footer class="pie posicion_form posicion_base posicion_planes">
+        <div>
+           <img src="/static/img/decoracion/udc.png" width="100px" class="pie__img"> 
+        </div>
+        <p>Universidad de Cartagena</p>
+        <p>Colombia</p>
+        <p>2023</p>
+    </footer>
+</body>
+</html>

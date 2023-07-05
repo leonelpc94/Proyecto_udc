@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/formulario.css">
+<div class="bloque">
+    <div class="bloque__titulo">
+        <h1 class="bloque__titulo__sub">Actualizar datos</h1>
+    </div>
+        <form action="/actualizar" method="post" enctype="multipart/form-data">
+            <div class="bloque__caja">
+                <input type="file" name="archivo">
+            </div>
+            <div class="bloque__caja">
+                <label>Nombre complato</label>
+                <br>
+                <input type="text" name="nombre" value="{{persona['_nombre']}}" required class="bloque__caja__input">
+            </div>
+            <div class="bloque__caja">
+                <label>Telefono</label>
+                <br>
+                <input type="text" name="telefono" value="{{persona['_telefono']}}" maxlength="10" required class="bloque__caja__input">
+            </div>
+            <hr>
+                <div class="bloque__caja">
+                    <button class="bloque__caja__boton">Enviar</button>
+                </div>
+            </form>
+        <hr>
+        <div class="bloque__caja">
+            <form action="/actualizarClave" method="get">
+                <button class="bloque__caja__boton">Cambiar contraseña</button>
+            </form>
+        </div>
+        <hr>
+        <div class="bloque__caja">
+            <form action="/e_persona" method="get">
+                <button class="bloque__caja__boton">Eliminar cuanta</button>
+            </form>
+        </div>
+</div>
+{% endblock %}

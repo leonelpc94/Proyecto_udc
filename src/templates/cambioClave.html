@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/formulario.css">
+<div class="bloque">
+    <div class="bloque__titulo">
+        <h2 class="bloque__titulo__sub">Actualizar contraseña</h2>
+    </div>
+    <form action="/actualizarClave" method="post">
+       <div class="bloque__caja">
+            <label class="bloque__titulo__sub">Contraseña actual</label>
+            <input type="password" required name="clave" class="bloque__caja__input">
+        </div>
+        <div class="bloque__caja">
+            <label class="bloque__titulo__sub">Nueva contraseña</label>
+            <input type="password" required name="claveNueva" class="bloque__caja__input">
+        </div>
+        <div class="bloque__caja">
+            <button class="bloque__caja__boton">Enviar</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

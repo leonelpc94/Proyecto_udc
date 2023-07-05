@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/formulario.css">
+<div class="bloque">
+    <form action="/registroPersona/registro" method="post" enctype="multipart/form-data">
+        <div class="bloque__titulo">
+            <h1 class="bloque__titulo__sub">Registro</h1> 
+        </div>
+        <hr>
+        <div class="bloque__caja">
+           <input type="file" name="archivo" required >
+        </div>
+        <div class="bloque__caja">
+            <input type="text" name="nombre" required placeholder="Nombre" class="bloque__caja__input">
+        </div>
+        <div class="bloque__caja">
+            <input type="password" name="clave" required placeholder="Clave" class="bloque__caja__input">
+        </div>
+        <div class="bloque__caja">
+            <input type="text" name="telefono" maxlength="10" required placeholder="Telefono" class="bloque__caja__input">
+        </div>
+        <div class="bloque__caja">
+            <button class="bloque__caja__boton">Enviar</button>
+        </div>
+    </form>
+</div>
+    
+{% endblock %}

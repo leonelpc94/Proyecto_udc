@@ -1,0 +1,113 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans';
+}
+body{
+    background-color:white;
+}
+.cabeza{
+    background-color:rgba(251,248,233,255);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 70px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10%;
+}
+.cabeza__izquierda{
+    display: grid;
+    justify-items: end;
+}
+.cabeza__izquierda__menu{
+    list-style: none;
+    height: 70px;
+    padding-right: 10%;
+    padding-top: 5px;
+}
+.cabeza__izquierda__vertical{
+    position: absolute;
+	display: none;
+	list-style: none;
+	background-color: rgba(251,248,233,255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    padding: 10px;
+}
+.cabeza__izquierda__menu  li:hover .cabeza__izquierda__vertical{
+    display: block;
+}
+.cabeza__izquierda__menu__img{
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.cabeza__izquierda__vertical__boton{
+    background-color: transparent;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+}
+.cabeza__izquierda__menu__lista{
+    padding: 10px;
+    cursor: pointer;
+}
+.cabeza__izquierda__menu__lista:hover{
+    background-color: rgba(248, 224, 105, 0.48);
+}
+.cabeza__izquierda__vertical__nombre{
+    margin: 10px;
+}
+.cuerpo{
+    margin: auto;
+    width: 80%;
+}
+.cabeza__derecha__boton{
+    background-color: transparent;
+    border: none;
+    padding-top: 5px;
+    padding-left:10%;
+    cursor: pointer;
+}
+.cuerpo__caja{
+    background-color: rgba(248, 224, 105, 0.48);
+    border-radius: 10px;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+.cuerpo__caja__mensaje{
+    text-align: center;
+    font-weight: bold
+}
+.pie{
+    background-color: black;
+    width: 100%;
+    height: 250px;  
+    /*margin-top: 100px;*/
+}
+.posicion_base{
+    margin-top: 50px;
+}
+.pie p{
+    text-align: center;
+    font-style: italic;
+    color: white;
+    margin-bottom: 20px;
+}
+.pie div{
+    display: grid;
+    justify-items: center;
+    margin: auto;
+}
+.pie__img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+@media screen and (max-width: 1000px){
+    .cabeza{
+        width: 85%;
+    }
+}

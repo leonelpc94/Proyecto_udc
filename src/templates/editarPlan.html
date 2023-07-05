@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/formulario.css">
+<div class="bloque">
+  <div class="bloque__titulo">
+    <h1 class="bloque__titulo__sub">Actualizar plan</h1>
+  </div>
+  <form action="/editarPlan/{{plan.getID()}}" method="post">
+    <div class="bloque__caja">
+      <label>Nombre</label>
+      <br>
+      <input type="text" name="nombre" value="{{plan.getNombre()}}" required class="bloque__caja__input">
+    </div>
+    <div class="bloque__caja">
+      <label>Costo</label>
+      <br>
+      <input type="text" name="costo" value="{{plan.getCosto()}}" required class="bloque__caja__input">
+    </div>
+    <div class="bloque__caja">
+      <label>Descripcion</label>
+      <br>
+      <textarea name="descipcion" cols="30" rows="10" required class="bloque__caja__box">{{plan.getDescripcion()}}</textarea>
+    </div>
+    <div class="bloque__caja">
+      <button class="bloque__caja__boton">Enviar</button>
+    </div>
+  </form>
+</div>
+  
+{% endblock %}

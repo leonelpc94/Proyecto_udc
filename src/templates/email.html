@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/formulario.css">
+<div class="bloque">
+    <div class="bloque__titulo">
+        <h3 class="bloque__titulo__sub">Ingrese el correo para iniciar el registro</h3>
+    </div>
+    <hr>
+    <form action="/registroPersona/code" method="post">
+        <div class="bloque__caja">
+            <input type="text" name="email" required placeholder="Email" class="bloque__caja__input">
+        </div>
+        <div class="bloque__caja">
+            <button class="bloque__caja__boton">Enviar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

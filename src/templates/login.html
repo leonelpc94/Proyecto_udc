@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/formulario.css">
+<div class="bloque">
+    <form action="/login" method="post">
+    <div class="bloque__titulo">
+      <h2 class="bloque__titulo__sub">Inicio secion</h2>
+    </div>
+    <hr>
+    <div class="bloque__caja">
+      <input type="text" name="email" required class="bloque__caja__input" placeholder="Email">
+    </div>
+    <div class="bloque__caja">
+      <input type="password" name="clave" required class="bloque__caja__input" placeholder="Contraseña">
+    </div class="bloque__caja">
+      <button class="bloque__caja__boton">Inicar sesión</button>
+  </form>
+  <hr>
+    <form action="/registroPersona/mail" method="get">
+      <div>
+        <button class="bloque__caja__boton">Registrar</button>
+      </div>
+    </form>
+</div>
+{% endblock %}

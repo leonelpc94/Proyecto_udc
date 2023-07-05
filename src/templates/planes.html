@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<link rel="stylesheet" href="/static/css/planes.css">
+    {% if lista != None %}
+        {% for index in lista %}
+        <div class="bloque">
+            <div class="bloque__caja">
+                <img src="/static/img/planes/{{index.getNombre()}}.jpg" width="500px" class="bloque__caja__img">
+            </div>
+            <div class="bloque__caja">
+                <h1 class="bloque__caja__nombre">{{index.getNombre()}}</h1>
+                <h3 class="bloque__caja__costo">$ COP: {{index.getCosto()}}</h3>
+                <h4 class="bloque__caja__descripcion">{{index.getDescripcion()}}</h4>
+            </div>
+            <div class="bloque__caja__botones">
+                {% if boton == 'menu' %}
+                    <form action="/deseados/{{index.getID()}}" method="get">
+                        <button class="bloque__caja__boton">Lista deseados</button>
+                    </form>
+                    <form action="/publicacion/{{index.getIdpersona()}}/{{index.getID()}}" method="get">
+                        <button class="bloque__caja__boton">Hacer pedido</button>
+                    </form>
+                {% endif %}
+                {% if boton == 'favoritos' %}
+                    <form action="/quitar/{{index.getID()}}" method="get">
+                        <button class="bloque__caja__boton">Eliminar deseados</button>
+                    </form>
+                    <form action="/publicacion/{{index.getIdpersona()}}/{{index.getID()}}" method="get">
+                        <button class="bloque__caja__boton">Hacer pedido</button>
+                    </form>
+                {% endif %}
+                {% if boton == 'lista' %}
+                    <form action="/e_plan/{{index.getID()}}" method="get">
+                        <button class="bloque__caja__boton">Eliminar</button>
+                    </form>
+                    <form action="/editarPlan/{{index.getID()}}" method="get">
+                        <button class="bloque__caja__boton">Editar plan</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% if lista == None %}
+        <p>no tienes favoritos </p>
+    {% endif %}
+{% endblock %}
+
